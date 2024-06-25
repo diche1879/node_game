@@ -1,21 +1,15 @@
-# Descargar la imagen que queremos utilizar
-# El leguaje que usa es yaml
-FROM node:22
+# Que imagen queremos utilizar. para coger la ultima versión se puede dejar vacio
+FROM node
 
-LABEL developer="Teresa"
-
-# Establecer carpeta de trabajo en la imágen
+# Definir la carpeta de trabajoc, el directorio de la app en la imagen
 WORKDIR /app
 
-# Copiar los ficheros con la info de las dependencias. Con el asterisco ya copiara los dos archivos
-COPY package*.json ./
-
-# Hay que instalar los modulos
-RUN npm install
-
-# Copiar toda la applicación. el '. .' significa todo
+# Copiar todo al directorio de trabajo a excepción de lo que está en el dockerignore
 COPY . .
 
-# Arrancar la applicación
-CMD ["npm", "start"]
+# Que ejecute el npm install para los modulos y obtener las dependencias
+RUN npm install
 
+#Arrancar la app
+#CMD ["node", "app.js"]
+CMD ["npm", "start"]
