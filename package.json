@@ -1,0 +1,16 @@
+{
+  "name": "juego_prueba",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "node --watch app.js"
+  },
+  "keywords": [],
+  "author": "teresa",
+  "license": "ISC",
+  "description": "Juego en docker",
+  "dependencies": {
+    "express": "^4.19.2",
+    "morgan": "^1.10.0"
+  }
+}
